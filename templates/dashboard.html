@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | Cloud File Storage</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+
+        <div class="brand">
+            ☁️ CloudVault
+        </div>
+
+        <div class="nav-right">
+            <span class="welcome-user">
+                👤 {{ user.username }}
+            </span>
+
+            <a href="{{ url_for('logout') }}"
+               class="logout-button">
+                Logout
+            </a>
+        </div>
+
+    </nav>
+
+
+    <!-- Main Content -->
+    <main class="dashboard-container">
+
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+
+            <div>
+                <h1>Welcome back, {{ user.username }}! 👋</h1>
+
+                <p>
+                    Manage your files securely from one place.
+                </p>
+            </div>
+
+            <div class="cloud-icon">
+                ☁️
+            </div>
+
+        </section>
+
+
+        <!-- Upload Section -->
+        <section class="upload-card">
+
+            <div class="upload-icon">
+                ☁️
+            </div>
+
+            <h2>Upload a File</h2>
+
+            <p>
+                Store your files securely in Azure Cloud Storage.
+            </p>
+
+            <form method="POST"
+                  action="{{ url_for('upload') }}"
+                  enctype="multipart/form-data"
+                  class="upload-form">
+
+                <input
+                    type="file"
+                    name="file"
+                    id="file"
+                    required
+                >
+
+                <button type="submit"
+                        class="upload-button">
+                    ⬆ Upload File
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- Files Section -->
+        <section class="files-section">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>My Files</h2>
+
+                    <p>
+                        Your files stored in the cloud
+                    </p>
+                </div>
+
+                <div class="file-count">
+                    {{ files|length }} file{% if files|length != 1 %}s{% endif %}
+                </div>
+
+            </div>
+
+
+            {% if files %}
+
+                <div class="file-list">
+
+                    {% for file in files %}
+
+                        <div class="file-card">
+
+                            <div class="file-info">
+
+                                <div class="file-icon">
+                                    📄
+                                </div>
+
+                                <div class="file-details">
+
+                                    <h3>
+                                        {{ file.filename }}
+                                    </h3>
+
+                                    <p>
+                                        Uploaded:
+                                        {{ file.upload_date.strftime('%d %b %Y, %I:%M %p') }}
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="file-actions">
+
+                                <!-- Download -->
+                                <a
+                                    href="{{ url_for('download', file_id=file.id) }}"
+                                    class="download-button"
+                                >
+                                    ⬇ Download
+                                </a>
+
+
+                                <!-- Delete -->
+                                <form
+                                    method="POST"
+                                    action="{{ url_for('delete_file', file_id=file.id) }}"
+                                    onsubmit="return confirm('Are you sure you want to delete {{ file.filename }}? This cannot be undone.');"
+                                >
+
+                                    <button
+                                        type="submit"
+                                        class="delete-button"
+                                    >
+                                        🗑 Delete
+                                    </button>
+
+                                </form>
+
+                            </div>
+
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+            {% else %}
+
+                <!-- Empty State -->
+                <div class="empty-state">
+
+                    <div class="empty-icon">
+                        📂
+                    </div>
+
+                    <h3>No files yet</h3>
+
+                    <p>
+                        Upload your first file to get started.
+                    </p>
+
+                </div>
+
+            {% endif %}
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <p>
+            ☁️ CloudVault &nbsp;•&nbsp;
+            Secure Cloud File Storage
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,534 @@
+/* =========================================
+   Global Styles
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #1f2937;
+}
+
+
+/* =========================================
+   Navigation Bar
+========================================= */
+
+.navbar {
+    width: 100%;
+    padding: 18px 7%;
+    background: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.brand {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.welcome-user {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.logout-button {
+    text-decoration: none;
+    padding: 9px 16px;
+
+    background: #111827;
+    color: white;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+.logout-button:hover {
+    opacity: 0.8;
+}
+
+
+/* =========================================
+   Main Dashboard
+========================================= */
+
+.dashboard-container {
+    width: 86%;
+    max-width: 1100px;
+
+    margin: 40px auto;
+}
+
+
+/* =========================================
+   Welcome Section
+========================================= */
+
+.welcome-section {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border: 1px solid #e5e7eb;
+
+    margin-bottom: 25px;
+}
+
+.welcome-section h1 {
+    margin: 0 0 8px;
+
+    font-size: 30px;
+}
+
+.welcome-section p {
+    margin: 0;
+
+    color: #6b7280;
+
+    font-size: 16px;
+}
+
+.cloud-icon {
+    font-size: 65px;
+}
+
+
+/* =========================================
+   Upload Card
+========================================= */
+
+.upload-card {
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 18px;
+
+    text-align: center;
+
+    border: 2px dashed #cbd5e1;
+
+    margin-bottom: 35px;
+
+    transition: 0.2s;
+}
+
+.upload-card:hover {
+    border-color: #64748b;
+}
+
+.upload-icon {
+    font-size: 48px;
+
+    margin-bottom: 10px;
+}
+
+.upload-card h2 {
+    margin: 8px 0;
+
+    font-size: 24px;
+}
+
+.upload-card p {
+    color: #6b7280;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   Upload Form
+========================================= */
+
+.upload-form {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+.upload-form input[type="file"] {
+    padding: 10px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 8px;
+
+    background: #f9fafb;
+}
+
+.upload-button {
+    border: none;
+
+    padding: 11px 20px;
+
+    border-radius: 8px;
+
+    background: #111827;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.upload-button:hover {
+    transform: translateY(-1px);
+
+    opacity: 0.85;
+}
+
+
+/* =========================================
+   Files Section
+========================================= */
+
+.files-section {
+    margin-top: 30px;
+}
+
+.section-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 18px;
+}
+
+.section-header h2 {
+    margin: 0 0 5px;
+
+    font-size: 25px;
+}
+
+.section-header p {
+    margin: 0;
+
+    color: #6b7280;
+}
+
+.file-count {
+    background: #e5e7eb;
+
+    padding: 8px 14px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================
+   File List
+========================================= */
+
+.file-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+.file-card {
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 14px;
+
+    padding: 18px 20px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    transition: 0.2s;
+}
+
+.file-card:hover {
+    transform: translateY(-2px);
+
+    border-color: #cbd5e1;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================================
+   File Information
+========================================= */
+
+.file-info {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    min-width: 0;
+}
+
+.file-icon {
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #f1f5f9;
+
+    border-radius: 10px;
+
+    font-size: 23px;
+
+    flex-shrink: 0;
+}
+
+.file-details {
+    min-width: 0;
+}
+
+.file-details h3 {
+    margin: 0 0 5px;
+
+    font-size: 16px;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+.file-details p {
+    margin: 0;
+
+    color: #6b7280;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   File Actions
+========================================= */
+
+.file-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    flex-shrink: 0;
+}
+
+.file-actions form {
+    margin: 0;
+}
+
+.download-button,
+.delete-button {
+    border: none;
+
+    padding: 9px 13px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    display: inline-block;
+
+    transition: 0.2s;
+}
+
+.download-button {
+    background: #111827;
+
+    color: white;
+}
+
+.download-button:hover {
+    opacity: 0.85;
+}
+
+.delete-button {
+    background: #fee2e2;
+
+    color: #b91c1c;
+}
+
+.delete-button:hover {
+    background: #fecaca;
+}
+
+
+/* =========================================
+   Empty State
+========================================= */
+
+.empty-state {
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 15px;
+
+    padding: 55px 20px;
+
+    text-align: center;
+}
+
+.empty-icon {
+    font-size: 55px;
+
+    margin-bottom: 10px;
+}
+
+.empty-state h3 {
+    margin: 8px 0;
+
+    font-size: 20px;
+}
+
+.empty-state p {
+    margin: 0;
+
+    color: #6b7280;
+}
+
+
+/* =========================================
+   Footer
+========================================= */
+
+.footer {
+    text-align: center;
+
+    padding: 25px;
+
+    color: #6b7280;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   Responsive Design
+========================================= */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        padding: 15px 5%;
+    }
+
+    .brand {
+        font-size: 20px;
+    }
+
+    .welcome-user {
+        display: none;
+    }
+
+    .dashboard-container {
+        width: 92%;
+
+        margin: 25px auto;
+    }
+
+    .welcome-section {
+        padding: 24px;
+    }
+
+    .welcome-section h1 {
+        font-size: 24px;
+    }
+
+    .cloud-icon {
+        font-size: 45px;
+    }
+
+    .upload-card {
+        padding: 25px 15px;
+    }
+
+    .file-card {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .file-actions {
+        width: 100%;
+    }
+
+    .download-button,
+    .delete-button {
+        text-align: center;
+
+        flex: 1;
+    }
+
+    .section-header {
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+}
