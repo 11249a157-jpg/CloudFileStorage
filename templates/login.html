@@ -1,47 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Login - Cloud File Storage</title>
+    <title>Login - CloudVault</title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
 </head>
 
-<body>
+<body class="login-page">
 
-    <div class="container">
+    <div class="login-container">
 
-        <h1>Login</h1>
+        <div class="login-card">
 
-        <form method="POST">
+            <div class="login-header">
+                <h1>CloudVault</h1>
+                <p>Cloud File Storage System</p>
+            </div>
 
-            <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                required
-            >
+            <h2>Welcome Back</h2>
+            <p class="login-subtitle">
+                Login to access your files
+            </p>
 
-            <br><br>
+            <form method="POST" action="{{ url_for('login') }}">
 
-            <input
-                type="password"
-                name="password"
-                placeholder="Password"
-                required
-            >
+                <div class="form-group">
+                    <label for="username">Username</label>
 
-            <br><br>
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="Enter your username"
+                        required
+                    >
+                </div>
 
-            <button type="submit">Login</button>
+                <div class="form-group">
+                    <label for="password">Password</label>
 
-        </form>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="login-button">
+                    Login
+                </button>
+
+            </form>
+
+            <p class="register-link">
+                Don't have an account?
+                <a href="{{ url_for('register') }}">Create one</a>
+            </p>
+
+        </div>
 
     </div>
 
 </body>
-
 </html>

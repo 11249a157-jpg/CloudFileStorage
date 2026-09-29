@@ -30,7 +30,7 @@ load_dotenv(
     os.path.join(app.root_path, ".env")
 )
 
-app.secret_key = "change-this-to-a-random-secret"
+app.secret_key = os.getenv("FLASK_SECRET_KEY")
 
 AZURE_CONNECTION_STRING = os.getenv(
     "AZURE_STORAGE_CONNECTION_STRING"
